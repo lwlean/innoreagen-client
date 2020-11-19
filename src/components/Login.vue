@@ -17,7 +17,7 @@
             <div class="login-submit" @click="login">登录</div>
         </form>
         <div class="login-footer">
-            <span>Copyright © 2020 新研氢能源科技有限公司 All rights reserved. 保留一切权利 </span>
+            <span>Copyright © 2020 新研创能源科技有限公司 All rights reserved. 保留一切权利 </span>
         </div>
     </div>
 </template>
@@ -33,17 +33,20 @@ export default {
     },
     methods: {
         login() {
-            // this.$message('hello')
-            this.$message('这是一条消息提示');
-            this.$message(`this.username: ${this.username} and this.password: ${this.password}`);
-        }
+            if (this.username === '' || this.username === null || this.username === undefined) {
+                this.myError('用户名不能为空');
+            }
+            console.log('route:', this)
+            this.$router.push('/home');
+        },
+        myError(msg) {
+            console.log(msg);
+            this.$notify.error({
+                title: '错误',
+                message: `${msg}`,
+            })
+        },
     },
-    watch: {
-        watchPasswd() {
-            
-        }
-    }
-
 }
 </script>
 
@@ -53,7 +56,9 @@ export default {
 }
 
 .continer {
-    width: 100vw;
+    /* width: 100%; */
+    position: relative;
+    min-width: 1500px;
     height: 100vh;
     background-color: rgba(23, 34, 59, 1);
     color: deepskyblue;
@@ -97,9 +102,9 @@ export default {
 
 .wrapper {
     position: absolute;
-    left: 80%;
+    right: 250px;
     top: 50%;
-    transform: translate(-80%, -50%);
+    transform: translateY(-50%);
     font-size: 1em;
     text-align: center;
     padding: auto;
@@ -129,7 +134,7 @@ export default {
     line-height: 30px;
     justify-content: center;
     background: transparent;
-    width: 15vw;
+    width: 282px;
     outline: none;
     border-style: none;
     border-bottom: 1px solid whitesmoke;
@@ -148,13 +153,14 @@ export default {
 .wrapper .login-submit {
     margin: auto;
     margin-top: 50px;
-    width: 15vw;
+    width: 282px;
     background: rgba(33, 150, 243, 0.3);
     border-radius: 50px;
     padding: 5px;
     cursor: pointer;
     padding: 10px;
     color: turquoise;
+    user-select: none;
 }
 
 .login-submit:hover {

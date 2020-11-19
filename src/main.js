@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import elementui from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
-import { Button, Select, Message } from 'element-ui'
+import router from './router/index';
+import { Message, Notification } from 'element-ui';
 
 Vue.config.productionTip = false
-Vue.use(Button)
-Vue.use(Select)
-Vue.use(Message)
+Vue.prototype.$message = Message
+Vue.prototype.$notify = Notification
 
 
 new Vue({
     render: h => h(App),
+    router,
 }).$mount('#app');
