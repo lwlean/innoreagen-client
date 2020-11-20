@@ -35,9 +35,10 @@ export default {
         login() {
             if (this.username === '' || this.username === null || this.username === undefined) {
                 this.myError('用户名不能为空');
+                return;
             }
-            console.log('route:', this)
-            this.$router.push('/home');
+            this.$store.commit('updateUsername', this.username);
+            this.$router.push('/show');
         },
         myError(msg) {
             console.log(msg);
