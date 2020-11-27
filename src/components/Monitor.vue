@@ -5,7 +5,10 @@
             <el-table-column prop="lastTime" label="最近测试时间" width="280"> </el-table-column>
             <el-table-column prop="ipAddress" label="内网地址" width="280"> </el-table-column>
             <el-table-column prop="control" label="操作" width="280">
-
+                <template slot-scope="scope">
+                    <el-button size="mini" type="primary" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                    <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                </template>
             </el-table-column>
         </el-table>
 

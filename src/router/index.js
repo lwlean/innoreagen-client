@@ -6,6 +6,7 @@ import Monitor from '@/components/Monitor.vue'
 import Data from '@/components/Data.vue'
 import User from '@/components/User.vue'
 import Settings from '@/components/Settings.vue'
+import Register from '@/components/Register.vue'
 
 import VueRouter from 'vue-router'
 
@@ -24,32 +25,32 @@ export default new VueRouter({
             component: Login
         },
         {
+            path: '/register',
+            name: 'register',
+            component: Register,
+        },
+        {
             path: '/home',
             name: 'home',
             component: Home,
             children: [{
                     path: '/show',
-                    name: 'show',
                     component: Show,
                 },
                 {
                     path: '/monitor',
-                    name: 'monitor',
                     component: Monitor,
                 },
                 {
                     path: '/data',
-                    name: 'data',
                     component: Data,
                 },
                 {
                     path: '/user',
-                    name: 'user',
                     component: User,
                 },
                 {
                     path: '/settings',
-                    name: 'settings',
                     component: Settings,
                 },
             ]

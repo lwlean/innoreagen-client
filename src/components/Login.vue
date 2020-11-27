@@ -2,8 +2,8 @@
     <div class="continer">
         <div class="login-navigator">
             <a target="_blank" href="http://www.innoreagen.com" class="login-alink-home">官方网站</a>
-            <a target="_blank" href="">帮助</a>
-            <a target="_blank" href="">注册</a>
+            <!-- <a target="_blank" href="">帮助</a> -->
+            <a target="_self" href="/register">注册</a>
         </div>
         <picture class="login-pic">
             <img src="../assets/innoreagen.png" alt="">
