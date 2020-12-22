@@ -1,6 +1,6 @@
 <template>
     <div>
-        i am show
+        展示页面结构未确定，请等待...
     </div>
 </template>
 

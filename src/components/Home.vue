@@ -34,7 +34,7 @@
         </keep-alive>
       </el-main>
     </el-container>
-    <el-footer height="30px"
+    <el-footer height="40px"
       ><span>{{ footerInfo }}</span></el-footer
     >
   </el-container>
@@ -143,7 +143,7 @@ export default {
 }
 
 .el-footer {
-  padding: 10px;
+  line-height: 40px;
   background-color: rgba(23, 34, 59, 1);
   text-align: center;
   color: whitesmoke;

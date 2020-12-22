@@ -13,7 +13,7 @@
               <input type="password" id="register-password" class="register-input" placeholder="输入用户密码">
               <div class="register-tip-password">6～16个字符，区分大小写</div>
               <input type="repassword" id="register-repassword" class="register-input" placeholder="确认用户密码">
-              <el-button type="info">登录</el-button>
+              <el-button type="info" @click="register">登录</el-button>
           </div>
       </el-main>
   </el-continer>
@@ -24,7 +24,9 @@ export default {
     name: 'Register',
     data() {
         return {
-
+          register() {
+            
+          }
         }
     }
 }
@@ -102,7 +104,7 @@ body {
     color: slategray;
 }
 
-.register-tip {
+.register-tip-username {
     display: none;
     line-height: 16px;
     margin-top: 5px;
@@ -110,18 +112,21 @@ body {
     text-align: left;
 }
 
-.register-tip .register-tip-username {
-    display: none;
-    line-height: 16px;
-    margin-top: 5px;
-    margin-left: 36px;
-    text-align: left;
+.register-tip-password {
+  display: none;
+  line-height: 16px;
+  margin-top: 5px;
+  margin-left: 36px;
+  text-align: left;
 }
 
 #register-username:focus ~ .register-tip-username {
     display: block;
 }
 
+#register-password:focus ~ .register-tip-password {
+  display: block;
+}
 
 
 
